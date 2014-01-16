@@ -46,3 +46,19 @@ section {
   @extend .row;
   margin-top: 20px;
   }
+
+#error_explanation {
+  @extend .error;
+  color: #f04124;
+  ul {
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .error;
+  input {
+    border: 1px solid #f04124;
+  }
+ }

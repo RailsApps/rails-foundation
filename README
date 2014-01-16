@@ -1,5 +1,7 @@
 Rails + Foundation
 ========================
+This is a fork of Daniel Kehoe's Rails App tutorial: https://github.com/RailsApps/rails-foundation/ with some modification
+to display validation errors in the flash.
 
 You can use this project as a starting point for a Rails web application. It requires Rails 4 and integrates Zurb Foundation.
 
@@ -17,3 +19,10 @@ ________________________
 MIT License
 
 http://www.opensource.org/licenses/mit-license
+
+Run
+
+```
+bundle
+rake db:migrate
+```
