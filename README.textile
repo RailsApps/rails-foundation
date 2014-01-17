@@ -4,11 +4,11 @@ Rails 4.0 example application that integrates Rails and Foundation 5.0.
 
 "Zurb Foundation":http://foundation.zurb.com/ provides CSS stylesheets and JavaScript code for the visual design of websites. Foundation is a framework for client-side (browser-based or “front end”) development, much like Ruby on Rails is a framework for server-side development.
 
-Foundation 5.0 was released November 21, 2013. This example application uses Rail 4.0 and Foundation 5.0.
+Foundation 5.0 was released November 21, 2013. Foundation 5.0.3 was released January 15, 2014. This example application uses Rails 4.0 and Foundation 5.0.3 (or newer). Foundation versions 5.0.1 and 5.0.2 were "incompatible with Rails Turbolinks":https://github.com/zurb/foundation/issues/3642 and the Rails asset pipeline, so use 5.0.3 or newer with Rails.
 
 Use this example application as a starter app for your own web applications.
 
-You can build this application in only a few minutes using the "Rails Composer":http://railsapps.github.io/rails-composer/ tool.
+You can build this application in only a few minutes using the "Rails Composer":http://railsapps.github.io/rails-composer/ tool, adding Devise for authentication and other options.
 
 h4. !http://railsapps.github.io/images/join/join-railsapps.png(Join RailsApps)!:http://railsapps.github.io/
 
