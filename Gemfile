@@ -9,7 +9,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'figaro'
-gem 'foundation-rails'
+gem 'foundation-rails', '5.0.3'
 gem 'high_voltage'
 gem 'simple_form'
 group :development do
