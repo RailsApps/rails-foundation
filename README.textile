@@ -1,10 +1,10 @@
 h1. !http://railsapps.github.io/images/rails-36x36.jpg(Rails Foundation)! Rails and Foundation
 
-Rails 4.0 example application that integrates Rails and Foundation 5.0.
+Rails 4.1 example application that integrates Rails and Foundation 5.0.
 
 "Zurb Foundation":http://foundation.zurb.com/ provides CSS stylesheets and JavaScript code for the visual design of websites. Foundation is a framework for client-side (browser-based or “front end”) development, much like Ruby on Rails is a framework for server-side development.
 
-Foundation 5.0 was released November 21, 2013. Foundation 5.0.3 was released January 15, 2014. This example application uses Rails 4.0 and Foundation 5.0.3 (or newer). Foundation versions 5.0.1 and 5.0.2 were "incompatible with Rails Turbolinks":https://github.com/zurb/foundation/issues/3642 and the Rails asset pipeline, so use 5.0.3 or newer with Rails.
+This example application uses Foundation 5.0.3.1. Foundation version 5.1.1.0 is incompatible with the Rails asset pipeline (see the "issue":https://github.com/RailsApps/rails-foundation/issues/2).
 
 Use this example application as a starter app for your own web applications.
 
@@ -14,7 +14,7 @@ h4. !http://railsapps.github.io/images/join/join-railsapps.png(Join RailsApps)!:
 
 h4. What is the RailsApps Project?
 
-The "RailsApps project":http://railsapps.github.io/ provides example applications that developers use as starter apps. Hundreds of developers use the apps, report problems as they arise, and propose solutions. Rails changes frequently; each application is known to work and serves as your personal "reference implementation." Each application is accompanied by a tutorial so there is no mystery code. Support for the project comes from subscribers. Please accept our invitation to "join the RailsApps project":http://railsapps.github.io/.
+The "RailsApps project":http://railsapps.github.io/ provides example applications that developers use as starter apps. Hundreds of developers use the apps, report problems as they arise, and propose solutions. Rails changes frequently; each application is known to work and serves as your personal "reference implementation." Support for the project comes from subscribers. If this application is helpful to you, please "join the RailsApps project":http://railsapps.github.io/ to support our work.
 
 h4. If You Are New to Rails
 
@@ -44,7 +44,13 @@ The application does not require a database. No pages are generated using inform
 
 h2. Similar Examples and Tutorials
 
-This is one in a series of Rails example apps and tutorials from the "RailsApps Project":http://railsapps.github.io/. See a list of additional "Rails examples, tutorials, and starter apps":http://railsapps.github.io/rails-examples-tutorials.html. The other examples are more complex.
+This is one in a series of Rails example apps and tutorials from the "RailsApps Project":http://railsapps.github.io/. See a list of additional "Rails examples, tutorials, and starter apps":http://railsapps.github.io/rails-examples-tutorials.html. Related example applications may be useful:
+
+* "Learn Rails":https://github.com/RailsApps/learn-rails basic concepts of rails
+* "Bootstrap and Rails":http://railsapps.github.io/rails-bootstrap/ shows to integrate Bootstrap
+* "OmniAuth and Rails":https://github.com/RailsApps/rails-omniauth shows to use OmniAuth for authentication
+* "Devise and Rails":https://github.com/RailsApps/rails-devise shows to use Devise for authentication
+* "Devise and Pundit and Rails":https://github.com/RailsApps/rails-devise-pundit shows to use Pundit for authorization
 
 h2. Accounts You Will Need
 
@@ -55,7 +61,7 @@ h2. Dependencies
 Before generating your application, you will need:
 
 * The Ruby language - version 2.1.0
-* The Rails gem - version 4.0
+* The Rails gem - version 4.1
 
 See the article "Installing Rails":http://railsapps.github.io/installing-rails.html for instructions about setting up Rails and your development environment.
 
@@ -81,7 +87,7 @@ h3. Generate
 
 If you want to use the project as a starter application, use the "Rails Composer":http://railsapps.github.io/rails-composer/ tool to generate a new version of the example app. You'll be able to give it your own project name when you generate the app. Generating the application gives you additional options.
 
-To build the example application, Rails 4.0 must be installed in your development environment. Run the command:
+To build the example application, Rails 4.1 must be installed in your development environment. Run the command:
 
 <pre>
 $ rails new rails-foundation -m https://raw.github.com/RailsApps/rails-composer/master/composer.rb
@@ -94,8 +100,8 @@ This creates a new Rails app named @rails-foundation@ on your computer. You can 
 You'll see a prompt:
 
 <pre>
-question  Install an example application for Rails 4.0?
-      1)  Build a RailsApps starter application
+question  Build a starter application?
+      1)  Build a RailsApps example application
       2)  Build a contributed application
       3)  I want to build my own application
 </pre>
@@ -103,11 +109,13 @@ question  Install an example application for Rails 4.0?
 Enter "1" to select *Build a RailsApps starter application*. You'll see a prompt:
 
 <pre>
-question  Starter apps for Rails 4.0. More to come.
+question  Starter apps for Rails 4.1. More to come.
       1)  learn-rails
       2)  rails-bootstrap
       3)  rails-foundation
-      4)  rails-devise
+      4)  rails-omniauth
+      5)  rails-devise
+      6)  rails-devise-pundit
 </pre>
 
 Choose *rails-foundation*. The Rails Composer tool may give you other options (other applications may have been added since these notes were written).
@@ -120,11 +128,15 @@ The application generator template will ask you for additional preferences:
        2)  Thin
        3)  Unicorn
        4)  Puma
+       5)  Phusion Passenger (Apache/Nginx)
+       6)  Phusion Passenger (Standalone)
  question  Web server for production?
        1)  Same as development
        2)  Thin
        3)  Unicorn
        4)  Puma
+       5)  Phusion Passenger (Apache/Nginx)
+       6)  Phusion Passenger (Standalone)
  question  Template engine?
        1)  ERB
        2)  Haml
@@ -161,18 +173,6 @@ h4. Troubleshooting
 
 If you get an error "OpenSSL certificate verify failed" or "Gem::RemoteFetcher::FetchError: SSL_connect" see the article "OpenSSL errors and Rails":http://railsapps.github.io/openssl-certificate-verify-failed.html.
 
-If you get an error like this:
-
-<pre>
-Your bundle is complete! Use `bundle show [gemname]` to see where a bundled gem is installed.
-    composer  Running 'after bundler' callbacks.
-The template [...] could not be loaded.
-Error: You have already activated ..., but your Gemfile requires ....
-Using bundle exec may solve this.
-</pre>
-
-It's due to conflicting gem versions. See the article "Rails Error: “You have already activated (…)”":http://railsapps.github.io/rails-error-you-have-already-activated.html.
-
 h3. Edit the README
 
 If you're storing the app in a GitHub repository, please edit the README files to add a description of the app and your contact info. If you don't change the README, people will think I am the author of your version of the application.
@@ -190,9 +190,7 @@ h3. Gems
 Here are the gems used by the application:
 
 * "foundation-rails":https://github.com/zurb/foundation-rails - Zurb Foundation for CSS and JavaScript
-* "figaro":https://github.com/laserlemon/figaro - configuration framework
 * "high_voltage":https://github.com/thoughtbot/high_voltage - for static pages like "about"
-* "simple_form":http://simple-form.plataformatec.com.br/ - forms made easy
 
 These gems make development easier:
 
@@ -220,29 +218,32 @@ Keep in mind that you have installed these gems locally. When you deploy the app
 
 h3. Configuration File
 
-The application uses the "figaro gem":https://github.com/laserlemon/figaro to set environment variables in the *config/application.yml* file. The *.gitignore* file prevents the *config/application.yml* file from being saved in the git repository so your credentials are kept private. See the article "Rails Environment Variables":http://railsapps.github.io/rails-environment-variables.html for more information.
+To keep some data private, and consolidate configuration settings in a single location, we store credentials in the *config/secrets.yml* file. Include the *config/secrets.yml* file in the *.gitignore* file to prevent the file from being saved in the git repository. See the article "Rails Environment Variables":http://railsapps.github.io/rails-environment-variables.html for more information.
 
-You can add any credentials to the file *config/application.yml*:
+This is the default *config/secrets.yml* file:
 
 <pre>
-# Add account credentials and API keys here.
-# See http://railsapps.github.io/rails-environment-variables.html
-# This file should be listed in .gitignore to keep your settings secret!
-# Each entry sets a local environment variable and overrides ENV variables in the Unix shell.
-# For example, setting:
-# GMAIL_USERNAME: Your_Gmail_Username
-# makes 'Your_Gmail_Username' available as ENV["GMAIL_USERNAME"]
-# Add application configuration variables here, as shown below.
-#
-# GMAIL_USERNAME: changeme
-# GMAIL_PASSWORD: changeme
+development:
+  secret_key_base: (not shown)
 </pre>
 
-The example application does not require any configuration settings. The file *config/application.yml* is provided in case you need to customize the application with features that require configuration settings.
+The example application does not require any configuration settings. The file *config/secrets.yml* is provided in case you need to customize the application with features that require configuration settings.
 
-All configuration values in the *config/application.yml* file are available anywhere in the application as environment variables. For example, @ENV["GMAIL_USERNAME"]@ will return the string "Your_Username".
+All configuration values in the *config/secrets.yml* file are available anywhere in the application as variables. For example, you could add @gmail_username: Your_Username@ and use it as @Rails.application.secrets.gmail_username@ elsewhere in the application. If you wish, you can set each value from an environment variable in the Unix shell. For example, @gmail_username: <%= ENV["GMAIL_USERNAME"] %>@.
 
-If you prefer, you can delete the *config/application.yml* file and set each value as an environment variable in the Unix shell.
+h3. Change your Application's Secret Token
+
+If you've used the Rails Composer tool to generate the application, the application's secret token will be unique, just as with any Rails application generated with the @rails new@ command.
+
+However, if you've cloned the application directly from GitHub, it is crucial that you change the application's secret token before deploying your application in production mode. Otherwise, people could change their session information, and potentially access your site without permission. Your secret token should be at least 30 characters long and completely random.
+
+Get a unique secret token:
+
+<pre>
+rake secret
+</pre>
+
+Edit the *config/secrets.yml* file to change the secret token.
 
 h2. Test the App
 
@@ -273,15 +274,7 @@ $ git commit -m "assets compiled for Heroku"
 $ git push origin master
 </pre>
 
-If you've set configuration values in the *config/application.yml* file, you'll need to set them as Heroku environment variables. See the article "Rails Environment Variables":http://railsapps.github.io/rails-environment-variables.html for more information.
-
-With the figaro gem, just run:
-
-<pre>
-rake figaro:heroku
-</pre>
-
-Alternatively, you can set Heroku environment variables directly with @heroku config:add@. For example:
+If you've set configuration values in the *config/secrets.yml* file, you'll need to set them as Heroku environment variables. You can set Heroku environment variables directly with @heroku config:add@. For example:
 
 <pre>
 $ heroku config:add GMAIL_USERNAME='myname@gmail.com' GMAIL_PASSWORD='secret'
@@ -319,7 +312,7 @@ If you add functionality to this application, create an alternative implementati
 
 h2. Credits
 
-Daniel Kehoe implemented the application and wrote the tutorial.
+Daniel Kehoe implemented the application.
 
 Is the app useful to you? Follow the project on Twitter: "@rails_apps":http://twitter.com/rails_apps
 and tweet some praise. I'd love to know you were helped out by what I've put together.
