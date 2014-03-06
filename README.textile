@@ -4,11 +4,9 @@ Rails 4.1 example application that integrates Rails and Foundation 5.0.
 
 "Zurb Foundation":http://foundation.zurb.com/ provides CSS stylesheets and JavaScript code for the visual design of websites. Foundation is a framework for client-side (browser-based or “front end”) development, much like Ruby on Rails is a framework for server-side development.
 
-This example application uses Foundation 5.0.3.1. Foundation version 5.1.1.0 is incompatible with the Rails asset pipeline (see the "issue":https://github.com/RailsApps/rails-foundation/issues/2).
+You can build this application in only a few minutes using the "Rails Composer":http://railsapps.github.io/rails-composer/ tool, adding Devise for authentication and other options.
 
 Use this example application as a starter app for your own web applications.
-
-You can build this application in only a few minutes using the "Rails Composer":http://railsapps.github.io/rails-composer/ tool, adding Devise for authentication and other options.
 
 h4. !http://railsapps.github.io/images/join/join-railsapps.png(Join RailsApps)!:http://railsapps.github.io/
 
@@ -298,7 +296,7 @@ Please create a "GitHub issue":https://github.com/RailsApps/rails-foundation/iss
 
 h2. Where to Get Help
 
-Your best source for help with problems is "Stack Overflow":http://stackoverflow.com/questions/tagged/ruby-on-rails-3. Your issue may have been encountered and addressed by others.
+Your best source for help with problems is "Stack Overflow":http://stackoverflow.com/questions/tagged/ruby-on-rails. Your issue may have been encountered and addressed by others. Use the tag "railsapps":http://stackoverflow.com/questions/tagged/railsapps when you ask your question.
 
 You can also try "Rails Hotline":http://www.railshotline.com/, a free telephone hotline for Rails help staffed by volunteers.
 
