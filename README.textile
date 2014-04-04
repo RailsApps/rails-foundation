@@ -1,12 +1,16 @@
 h1. !http://railsapps.github.io/images/rails-36x36.jpg(Rails Foundation)! Rails and Foundation
 
-Rails 4.1 example application that integrates Rails and Foundation 5.0.
+Rails 4.1 example application that integrates Rails and Foundation 5.2.
 
 "Zurb Foundation":http://foundation.zurb.com/ provides CSS stylesheets and JavaScript code for the visual design of websites. Foundation is a framework for client-side (browser-based or “front end”) development, much like Ruby on Rails is a framework for server-side development.
 
 You can build this application in only a few minutes using the "Rails Composer":http://railsapps.github.io/rails-composer/ tool, adding Devise for authentication and other options.
 
 Use this example application as a starter app for your own web applications.
+
+h4. Quickstart Guide
+
+The RailsApps project provides a "Rails and Foundation":http://railsapps.github.io/rails-foundation.html Quickstart Guide with details about integrating Rails and Foundation.
 
 h4. !http://railsapps.github.io/images/join/join-railsapps.png(Join RailsApps)!:http://railsapps.github.io/
 
