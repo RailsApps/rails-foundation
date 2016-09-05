@@ -13,13 +13,11 @@
 // THESE ARE EXAMPLES YOU CAN MODIFY
 // create mixins using Foundation classes
 @mixin twelve-columns {
-  @extend .small-12;
-  @extend .columns;
+  @include grid-column;
   }
 @mixin six-columns-centered {
-  @extend .small-6;
-  @extend .columns;
-  @extend .text-center;
+  @include grid-column(6);
+  @include grid-column-position(center)
   }
 // create your own classes
 // to make views framework-neutral
@@ -33,8 +31,7 @@
   @include six-columns-centered;
   }
 .submit {
-  @extend .button;
-  @extend .radius;
+  @include button;
   }
 // apply styles to HTML elements
 // to make views framework-neutral
@@ -43,6 +40,6 @@ main {
   background-color: #eee;
   }
 section {
-  @extend .row;
+  @include grid-row;
   margin-top: 20px;
   }

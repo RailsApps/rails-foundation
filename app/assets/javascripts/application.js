@@ -15,6 +15,9 @@
 //= require turbolinks
 //= require foundation
 //= require_tree .
-$(function() {
+
+var ready = function() {
   $(document).foundation();
-});
+};
+$(document).ready(ready);
+$(document).on('page:load', ready);
